@@ -1,71 +1,28 @@
-# are-you-getting-off-work README
+# Are You Getting Off Work 
 
-This is the README for your extension "are-you-getting-off-work". After writing up a brief description, we recommend including the following sections.
+The countdown plug-in for getting off work, reasonably allocating the relationship between work and life (boss: this needs to be changed. you: after work, you have to pay more)
+
+## Install
+- Go to VS Marketplace.
+- Click on the "Install" button.
+- Open the settings and configure the off duty time
 
 ## Features
+- When the off duty time is up, a reminder will be given in the notice bar. If you don't want to receive a reminder but just view the time from off duty, you can change it in setting
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Contribute
+If you have any new ideas, please submit the `issue` or `pr`
 
-For example if there is an image subfolder under your extension project workspace:
 
-\!\[feature X\]\(images/feature-x.png\)
+# 中文
+下班倒计时插件，合理分配工作和生活之间的关系（老板：这个需要改一下。你：下班了，得加钱）
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## 安装
+- 去到`VS Marketplace`
+- 点击`Install`进行安装
+- 打开`setting`，配置下班时间
+## 特征
+- 下班时间到了后，会在通知栏进行提醒，若不想收到提醒而只是查看距离下班的时间，可以在`setting`中进行配置
 
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+## 贡献
+如果有什么新的想法，欢迎提交`issue`或者`pr`
