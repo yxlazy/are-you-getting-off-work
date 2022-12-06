@@ -3,6 +3,7 @@
   "displayName": "Are You Getting Off Work",
   "description": "Are you getting off work ?",
   "version": "0.0.1",
+  "publisher": "yxlazy",
   "engines": {
     "vscode": "^1.73.0"
   },
