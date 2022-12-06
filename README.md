@@ -3,7 +3,7 @@
 The countdown plug-in for getting off work, reasonably allocating the relationship between work and life (boss: this needs to be changed. you: after work, you have to pay more)
 
 ## Install
-- Go to VS Marketplace.
+- Go to [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=yxlazy.are-you-getting-off-work).
 - Click on the "Install" button.
 - Open the settings and configure the off duty time
 
@@ -18,7 +18,7 @@ If you have any new ideas, please submit the `issue` or `pr`
 下班倒计时插件，合理分配工作和生活之间的关系（老板：这个需要改一下。你：下班了，得加钱）
 
 ## 安装
-- 去到`VS Marketplace`
+- 打开 [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=yxlazy.are-you-getting-off-work) 页面
 - 点击`Install`进行安装
 - 打开`setting`，配置下班时间
 ## 特征

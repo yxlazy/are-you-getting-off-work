@@ -4,6 +4,16 @@
   "description": "Are you getting off work ?",
   "version": "0.0.1",
   "publisher": "yxlazy",
+  "homepage": "https://marketplace.visualstudio.com/items?itemName=yxlazy.are-you-getting-off-work",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yxlazy/are-you-getting-off-work"
+  },
+  "keywords": [
+    "countdown",
+    "entertainment",
+    "game"
+  ],
   "engines": {
     "vscode": "^1.73.0"
   },
