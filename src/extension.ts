@@ -101,6 +101,10 @@ function isWindowsPlatform() {
 }
 
 function runShutDownCmd(shutdownDelay: string) {
+	// 设置为0后，可能会导致打开vscode，立即关机
+	if (shutdownDelay === '0') {
+		return;
+	}
 	if (isWindowsPlatform()) {
 		execCommand('shutdown', ['/s', '/t', shutdownDelay]);
 	}
