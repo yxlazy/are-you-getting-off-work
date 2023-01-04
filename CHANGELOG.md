@@ -3,6 +3,11 @@
 All notable changes to the "are-you-getting-off-work" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [0.0.5] - 2023-01-04
+### Changed
+- Updated the shutdown delay time to minutes and add several options
+### Removed
+- Remove the shutdown delay time and set it to 0
 ## [0.0.4] - 2023-01-04
 ### Removed
 - Remove the shutdown delay time and set it to 0

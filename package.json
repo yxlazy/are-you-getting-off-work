@@ -2,7 +2,7 @@
   "name": "are-you-getting-off-work",
   "displayName": "Are You Getting Off Work",
   "description": "Are you getting off work ?",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "publisher": "yxlazy",
   "homepage": "https://marketplace.visualstudio.com/items?itemName=yxlazy.are-you-getting-off-work",
   "repository": {
@@ -55,9 +55,9 @@
         "go-off-work.shutdownDelay": {
           "type": "string",
           "default": "10",
-          "description": "Shutdown delay time (valid only after shutdown is selected)",
+          "description": "Shutdown delay time (unit: minute) --- valid only after shutdown is selected",
           "order": 0,
-          "enum": ["5", "10", "20", "30", "40", "50", "60", "90", "120", "180"]
+          "enum": ["5", "10", "15", "20", "25", "30", "40", "50", "60", "90", "120", "180"]
         },
         "go-off-work.hour": {
           "type": "string",

@@ -101,12 +101,13 @@ function isWindowsPlatform() {
 }
 
 function runShutDownCmd(shutdownDelay: string) {
+	const base = 60, delay = Number(shutdownDelay);
 	// 设置为0后，可能会导致打开vscode，立即关机
-	if (shutdownDelay === '0') {
+	if (delay === 0 || Number.isNaN(delay)) {
 		return;
 	}
 	if (isWindowsPlatform()) {
-		execCommand('shutdown', ['/s', '/t', shutdownDelay]);
+		execCommand('shutdown', ['/s', '/t', String(base * delay)]);
 	}
 }
 
