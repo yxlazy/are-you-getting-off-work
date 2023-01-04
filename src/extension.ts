@@ -3,6 +3,8 @@
 import * as vscode from 'vscode';
 import * as dayjs from "dayjs";
 import * as duration from "dayjs/plugin/duration";
+import * as childProcess from "child_process";
+import * as os from "os";
 
 dayjs.extend(duration);
 
@@ -54,12 +56,14 @@ function countDown(fn: Function) {
 function runExec() {
 	countDown(() => {
 		const configOpts = getConfiguration();
-		const hour = configOpts.get('hour'), 
-		minute = configOpts.get('minute'), 
-		second = configOpts.get('second'), 
-		enableShowNotification = configOpts.get('showNotification'),
+		const hour = configOpts.get('hour') as string, 
+		minute = configOpts.get('minute') as string, 
+		second = configOpts.get('second') as string, 
+		enableShowNotification = configOpts.get('showNotification') as boolean,
 		showOffWorkContent = configOpts.get('showOffWorkContent') as string,
-		showContentAtStatusBar = configOpts.get('showContentAtStatusBar') as string;
+		showContentAtStatusBar = configOpts.get('showContentAtStatusBar') as string,
+		shutDownOnTime = configOpts.get('shutdown') as boolean,
+		shutdownDelay = configOpts.get('shutdownDelay') as string;
 
 		const now = dayjs();
 		const offWorkTime = dayjs(`${now.format('YYYY-MM-DD')} ${hour}:${minute}:${second}`);
@@ -69,7 +73,10 @@ function runExec() {
 			enableShowNotification && showNotification(showOffWorkContent);
 			statusBarItem.text = showContentAtStatusBar;
 			hasShowNotification = true;
-
+			
+			if (shutDownOnTime) {
+				runShutDownCmd(shutdownDelay);
+			}
 		} else if (showText > 0) {
 			statusBarItem.text = dayjs.duration(showText).format('HH:mm:ss');
 			hasShowNotification = false;
@@ -85,6 +92,32 @@ function showNotification(info: string) {
 
 function getConfiguration() {
 	return vscode.workspace.getConfiguration('go-off-work');
+}
+
+function isWindowsPlatform() {
+	const platform = os.platform();
+
+	return platform === 'win32';
+}
+
+function runShutDownCmd(shutdownDelay: string) {
+	if (isWindowsPlatform()) {
+		execCommand('shutdown', ['/s', '/t', shutdownDelay]);
+	}
+}
+
+function execCommand(cmd: string, args: string[]) {
+	if (args.length > 0) {
+		args.unshift(cmd);
+		cmd = args.join(' ');
+	}
+	childProcess.exec(cmd, (error, stdout, stderr) => {
+		if (error || stderr) {
+			throw new Error(error?.message || stderr);
+		}
+
+		console.log(`[Run Command ${cmd}]\t${stdout}`);
+	});
 }
 
 // This method is called when your extension is deactivated
